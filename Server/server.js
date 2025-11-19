@@ -4,7 +4,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import { requireAuth } from "@clerk/express";
 
-import clientRoutes from './routes/clientRoutes.js';
+import clientRoutes from "./routes/clientRoutes.js";
+import serviceRoutes from "./routes/serviceRoutes.js";
 
 const app = express();
 
@@ -20,7 +21,8 @@ app.get("/", (req, res) => {
   res.send("Circuitry API is running");
 });
 
-app.use('/api/clients', clientRoutes);
+app.use("/api/clients", clientRoutes);
+app.use("/api/services", serviceRoutes);
 
 app.get("/api/test", (req, res) => {
   res.json({

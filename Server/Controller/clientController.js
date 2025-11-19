@@ -29,7 +29,6 @@ export const createClient = async (req, res) => {
 
     const savedClient = await newClient.save();
     res.status(201).json(savedClient);
-    
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
